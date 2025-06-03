@@ -9,18 +9,6 @@ api_endpoint = os.getenv("DOCKER_API_ENDPOINT")
 vectorizer = os.getenv("VECTORIZER")
 LLM = os.getenv("LLM")
 
-import weaviate
-from weaviate.classes.init import AdditionalConfig, Timeout
-import weaviate.classes.config as wc
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-api_endpoint = os.getenv("DOCKER_API_ENDPOINT")
-vectorizer = os.getenv("VECTORIZER")
-LLM = os.getenv("LLM")
-
-
 def connectDB():
     try:
         client = weaviate.connect_to_local(
